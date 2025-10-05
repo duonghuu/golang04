@@ -1,0 +1,38 @@
+{
+  "name": "Go Dev Container",
+  "dockerFile": "Dockerfile",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "go.useLanguageServer": true,
+        "go.toolsEnvVars": {
+          "GO111MODULE": "on"
+        },
+        "go.gopath": "/go",
+        "go.goroot": "/usr/local/go",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "git.enableSmartCommit": true,
+        "git.autofetch": true
+      },
+      "extensions": [
+        "golang.go",
+        "ms-vscode.go",
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github"
+      ]
+    }
+  },
+  "postCreateCommand": "git config --global --add safe.directory /workspace && go mod tidy",
+  "remoteUser": "vscode",
+  "forwardPorts": [8080, 9000],
+  "shutdownAction": "stopContainer"
+}
