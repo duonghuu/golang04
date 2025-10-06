@@ -1,0 +1,55 @@
+# =====================================================
+# Go build artifacts
+# =====================================================
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+main
+api
+server
+
+# Build folders
+bin/
+build/
+dist/
+
+# Go modules cache
+pkg/
+go/pkg/
+vendor/
+
+# Module checksum (nếu muốn giữ, bỏ comment 2 dòng dưới)
+# !go.mod
+# !go.sum
+
+# Coverage / test
+coverage.out
+
+# =====================================================
+# Docker & Dev Container
+# =====================================================
+.dockerignore
+Dockerfile.*
+docker-compose.yml
+docker-compose.override.yml
+.devcontainer/*.log
+.devcontainer/*.bak
+.devcontainer/*.tmp
+
+# =====================================================
+# Editor / IDE
+# =====================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =====================================================
+# System files
+# =====================================================
+.DS_Store
+Thumbs.db
